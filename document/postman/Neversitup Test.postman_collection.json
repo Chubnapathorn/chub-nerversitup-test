@@ -442,6 +442,41 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Application Order Cancel",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "123456789"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 300000,\r\n    \"status\": \"Active\",\r\n    \"item\": [\r\n        {\r\n            \"productId\": \"985dddad-1188-4604-a9af-eb12f7beecb6\",\r\n            \"unit\": 1\r\n        },\r\n        {\r\n            \"productId\": \"985dddad-1188-4604-a9af-eb12f7beecb6\",\r\n            \"unit\": 12\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/order/972b743a-6bfd-45c2-9084-0cf2cc32755d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						"972b743a-6bfd-45c2-9084-0cf2cc32755d"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
