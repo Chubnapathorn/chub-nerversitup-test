@@ -101,7 +101,7 @@ exports.update = (req, res) => {
         .then(user => {
             if (!user) {
                 return res.status(404).send({
-                    message: "User not found with id " + req.params.noteId
+                    message: "User not found with id " + req.params.userId
                 });
             }
             res.send(user);

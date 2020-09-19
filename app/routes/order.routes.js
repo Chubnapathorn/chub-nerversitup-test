@@ -6,6 +6,8 @@ module.exports = (app) => {
 
     app.get('/order/:orderId', order.findOrder);
 
+    app.put('/order/:orderId', order.findOrderAndCancel);
+
     app.get('/order/history/:userId', order.findOrderHistoryByUser);
 
 

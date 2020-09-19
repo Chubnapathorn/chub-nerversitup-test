@@ -49,8 +49,7 @@ exports.findOrderHistoryByUser = (req, res) => {
         });
 };
 
-    exports.Y
-    findOrder = (req, res) => {
+exports.findOrder = (req, res) => {
     Order.findOne({ OrderID: req.params.orderId })
         .then(order => {
             if (!order) {
@@ -69,4 +68,27 @@ exports.findOrderHistoryByUser = (req, res) => {
                 message: "Error retrieving order with id " + req.params.userId
             });
         });
+};
+
+exports.findOrderAndCancel = (req, res) => {
+    Order.findOneAndUpdate({ OrderID: req.params.orderId }, {
+        Status: "Cancel"
+    }, { new: true })
+    .then(order => {
+        if (!order) {
+            return res.status(404).send({
+                message: "Order not found with id " + req.params.orderId
+            });
+        }
+        res.send(order);
+    }).catch(err => {
+        if (err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "Order not found with id " + req.params.orderId
+            });
+        }
+        return res.status(500).send({
+            message: "Error updating order with id " + req.params.orderId
+        });
+    });
 };
