@@ -1,0 +1,448 @@
+{
+	"info": {
+		"_postman_id": "e7afa372-3b30-4ff1-acd9-ddb2135f394f",
+		"name": "Neversitup Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Application Handshake",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "123456789",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserID\": \"Dev3\",\r\n    \"Username\": \"Dev3\",\r\n    \"Password\": \"Dev3\",\r\n    \"Name\": \"Dev3\",\r\n    \"Remark\": \"Dev3\",\r\n    \"CreatedDate\": \"Dev3\",\r\n    \"UpdatedDate\": \"Dev3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Application User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "123456789"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Sample\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Application User Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "123456789"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Sample\",\r\n    \"password\": \"1234\",\r\n    \"name\":\"sample name\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Application User Update Profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "123456789"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/Sample",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"Sample"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Application User View All User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "123456789"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Sample\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/Sample",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"Sample"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Application User View By Username",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "123456789"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Sample\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/Sample",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"Sample"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Application Product Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "123456789"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Product B\", \r\n        \"description\": \"Sample Desceiption\",\r\n        \"numberofunit\":1000,\r\n        \"price\": 200000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Application Product View All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "123456789"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Product A\", \r\n        \"description\": \"Sample Desceiption\",\r\n        \"sku\": \"PRODUCT1\",\r\n        \"price\": 200000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Application Product View By Product Name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "123456789"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Sample\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products/Product A",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"Product A"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Application Order Created",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "123456789"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 300000,\r\n    \"status\": \"Active\",\r\n    \"item\": [\r\n        {\r\n            \"productId\": \"985dddad-1188-4604-a9af-eb12f7beecb6\",\r\n            \"unit\": 1\r\n        },\r\n        {\r\n            \"productId\": \"985dddad-1188-4604-a9af-eb12f7beecb6\",\r\n            \"unit\": 12\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/order/360ec5d2-7fb4-46eb-8118-f1185e49a5cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						"360ec5d2-7fb4-46eb-8118-f1185e49a5cd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Application Order View By User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "123456789"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 300000,\r\n    \"status\": \"Active\",\r\n    \"item\": [\r\n        {\r\n            \"productId\": \"985dddad-1188-4604-a9af-eb12f7beecb6\",\r\n            \"unit\": 1\r\n        },\r\n        {\r\n            \"productId\": \"985dddad-1188-4604-a9af-eb12f7beecb6\",\r\n            \"unit\": 12\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/order/history/360ec5d2-7fb4-46eb-8118-f1185e49a5cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						"history",
+						"360ec5d2-7fb4-46eb-8118-f1185e49a5cd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Application Order View By ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "123456789"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 300000,\r\n    \"status\": \"Active\",\r\n    \"item\": [\r\n        {\r\n            \"productId\": \"985dddad-1188-4604-a9af-eb12f7beecb6\",\r\n            \"unit\": 1\r\n        },\r\n        {\r\n            \"productId\": \"985dddad-1188-4604-a9af-eb12f7beecb6\",\r\n            \"unit\": 12\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/order/360ec5d2-7fb4-46eb-8118-f1185e49a5cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						"360ec5d2-7fb4-46eb-8118-f1185e49a5cd"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
